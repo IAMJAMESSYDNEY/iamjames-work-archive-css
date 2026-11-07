@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light dark;
+  --paper: #f5f2eb;
+  --ink: #201d19;
+  --muted: #59524a;
+  --line: #a49c90;
+  --focus: #6945ac;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #191816;
+    --ink: #f5f2eb;
+    --muted: #c1b9ac;
+    --line: #766e63;
+    --focus: #cdb4ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+
+main {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+  padding-block: clamp(2rem, 8vw, 6rem);
+}
+
+.intro {
+  border-block-start: 2px solid;
+  padding-block-end: 2rem;
+}
+
+.intro p {
+  max-width: 52ch;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font: 700 .8rem/1.5 ui-monospace, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+
+.archive__controls:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+}
+
+.archive__controls label {
+  display: block;
+  margin-block-end: .3rem;
+}
+
+.archive__controls :is(input, button) {
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  padding: .5rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: .25rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.archive__controls button {
+  cursor: pointer;
+}
+
+.archive__controls :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+#archive-status {
+  color: var(--muted);
+}
+
+#archive-status:empty {
+  margin: 0;
+}
+
+.archive__list {
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--line);
+  list-style: none;
+}
+
+/*
+ * The search state has one more class than the layout selector.
+ * It wins over both desktop flex and the later mobile grid rule.
+ */
+#work-archive .archive__row.is-search-hidden {
+  display: none;
+}
+
+#work-archive .archive__row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+.archive__date {
+  flex: 0 0 6rem;
+  color: var(--muted);
+  font-family: ui-monospace, monospace;
+}
+
+.archive__name {
+  flex: 0 1 17rem;
+}
+
+@media (max-width: 767px) {
+  #work-archive .archive__row {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: .25rem .75rem;
+  }
+
+  .archive__service {
+    grid-column: 2;
+  }
+}

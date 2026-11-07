@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work archive CSS case study | IAMJAMES</title>
+  <link rel="stylesheet" href="archive.css">
+  <script src="archive.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <p class="eyebrow">IAMJAMES / CSS case study</p>
+      <h1>Work archive</h1>
+      <p>Search the sample projects or change their date order. Resize the page to see how the same rows adapt to a narrow viewport.</p>
+    </header>
+
+    <section id="work-archive" aria-label="Sample project archive">
+      <div class="archive__controls" hidden>
+        <div>
+          <label for="project-search">Search projects</label>
+          <input id="project-search" type="search" placeholder="Try wayfinding">
+        </div>
+        <button id="date-order" type="button">Date order <span id="direction">↓ Newest first</span></button>
+      </div>
+      <p id="archive-status" role="status"></p>
+
+      <ul class="archive__list" role="list">
+        <li class="archive__row">
+          <time class="archive__date" datetime="2025-08">2025.08</time>
+          <strong class="archive__name">Harbour Atlas</strong>
+          <span class="archive__service">Wayfinding and web design</span>
+        </li>
+        <li class="archive__row">
+          <time class="archive__date" datetime="2024-11">2024.11</time>
+          <strong class="archive__name">Studio Relay</strong>
+          <span class="archive__service">Design system</span>
+        </li>
+        <li class="archive__row">
+          <time class="archive__date" datetime="2023-03">2023.03</time>
+          <strong class="archive__name">Field Notes</strong>
+          <span class="archive__service">Editorial platform</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
