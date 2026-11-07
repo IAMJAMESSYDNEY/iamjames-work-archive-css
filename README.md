@@ -5,6 +5,7 @@ It uses fictional projects and three files of plain HTML, CSS and JavaScript.
 
 ## Run the demo
 
+**[Try the live demo](https://iamjamessydney.github.io/iamjames-work-archive-css/)**
 Download the files together and open `index.html` in a browser. The demo
 runs locally without WordPress, a build step or a server.
 
